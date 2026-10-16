@@ -7,6 +7,26 @@ stable release is cut.
 
 ## [Unreleased]
 
+### Added (2026-10-16)
+- **Lucciola: Keep Awake gets its own Noctalia plugin.** A bar indicator
+  lit while Keep Awake is on, a clock while it is scheduled, dim when off,
+  with the end time in its tooltip; notification icons drawn from the same Tabler
+  glyphs as the bar, in Lucciola's warm tones, instead of symbolic ones; a control-centre tile in place of Noctalia's
+  caffeine; a panel with quick durations (1 h, 3 h, midnight, tomorrow
+  night) and a scheduler (from now or a day and time, to a day and time);
+  launcher results for "awake", "sveglio", "2h", "18:30". It replaces the
+  three launcher entries, whose symbolic icons were unreadable on a dark
+  background, and the coffee-cup click binding: the cup no longer stands in
+  for Keep Awake. `keep-awake status --json` feeds it.
+
+### Added (2026-10-15)
+- **Lucciola: Keep Awake until a time, or from a time.** `keep-awake on
+  UNTIL` ends at any time `date -d` reads, `keep-awake tomorrow` (and the
+  launcher "Keep Awake Until Tomorrow Night") runs through the end of the
+  next day, `keep-awake schedule START [UNTIL]` starts later through a
+  transient timer accurate to the second, `keep-awake cancel` drops it.
+  "on" while already on only moves the end later.
+
 ### Added (2026-10-13)
 - **Super+Return opens a new terminal window** on Margine (GNOME) and
   Lucciola (niri): `ptyxis --new-window`. Plain `ptyxis` only raised the

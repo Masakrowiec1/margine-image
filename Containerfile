@@ -106,6 +106,11 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=tmpfs,dst=/tmp \
     /ctx/build-margine-extensions.sh
 
+# ----- OpenRazer: Instalação do daemon para o Razer Cobra -----
+RUN dnf copr enable -y openrazer/openrazer && \
+    dnf install -y openrazer-daemon && \
+    dnf clean all
+
 # ----- Build-residue sweep + lint: verify final image is a valid bootc container -----
 # 99-cleanup.sh removes the /var state the build's dnf/rpm transactions
 # leave behind (dead weight on installed systems — bootc only uses image

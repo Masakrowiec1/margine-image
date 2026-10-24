@@ -107,6 +107,7 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     /ctx/build-margine-extensions.sh
 
 # ----- OpenRazer: Instalação do daemon para o Razer Cobra -----
+# hadolint ignore=DL3041
 RUN dnf copr enable -y openrazer/openrazer && \
     dnf install -y openrazer-daemon && \
     dnf clean all
